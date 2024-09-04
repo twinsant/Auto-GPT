@@ -1,8 +1,8 @@
 import inspect
+import os
 from collections import defaultdict
 from contextlib import asynccontextmanager
 from functools import wraps
-import os
 from typing import Annotated, Any, Dict
 
 import uvicorn
@@ -199,7 +199,7 @@ class AgentServer(AppService):
         uvicorn.run(
             app,
             host=os.getenv("AP_SERVER_HOST", "0.0.0.0"),
-            port=int(os.getenv("AP_SERVER_PORT", "8000"))
+            port=int(os.getenv("AP_SERVER_PORT", "8000")),
         )
 
     def set_test_dependency_overrides(self, overrides: dict):
