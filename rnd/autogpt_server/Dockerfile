@@ -46,7 +46,7 @@ RUN poetry run prisma generate
 
 FROM server_base as server
 
-ENV PORT=8000
+ENV AP_SERVER_PORT=8000
 ENV DATABASE_URL=""
 
 CMD ["poetry", "run", "app"]
